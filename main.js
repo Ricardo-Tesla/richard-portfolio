@@ -120,33 +120,33 @@ const projectsData = {
             videoUrl: '/videos/Assignproj.mp4',
             githubUrl: 'https://github.com/Ricardo-Tesla/AssignProj',
             technologies: ['JavaScript', 'Node.js', 'XAMPP'],
-            thumbnail: '/images/thumbnails/Homepage assignproj.png'
+            thumbnail: './images/thumbnails/Homepage assignproj.png'
         },
         {
             id: 2,
             title: 'Bus Reservations Platform',
             category: 'Web Apps',
             description: 'An online bus reservation platform.',
-            videoUrl: '/videos/Easebus.mp4',
+            videoUrl: './videos/Easebus.mp4',
             technologies: ['React', 'Express', 'Node.js'],
-            thumbnail: '/images/thumbnails/Homepage-bus reservations.png'
+            thumbnail: './images/thumbnails/Homepage-bus reservations.png'
         },
         {
             id: 3,
             title: 'Fitness App',
             category: 'Mobile Apps',
             description: 'Workout planning and progress tracking app.',
-            videoUrl: '/videos/Fitness app.mp4',
+            videoUrl: './videos/Fitness app.mp4',
             technologies: ['Android Studio'],
-            thumbnail: '/images/thumbnails/Fitness app- homepage.png'
+            thumbnail: './images/thumbnails/Fitness app- homepage.png'
         },
         {
             id: 4,
             title: 'Les Darmi flyer',
             category: 'Graphic Designs',
             description: 'Promotional flyer design for Les Darmi.',
-            imageUrl: '/images/graphic design/lesdarmiflyer.png',
-            thumbnail: '/images/graphic design/lesdarmiflyer.png',
+            imageUrl: './images/graphic design/lesdarmiflyer.png',
+            thumbnail: './images/graphic design/lesdarmiflyer.png',
             technologies: ['Photoshop', 'Illustrator']
         },
         {
@@ -154,8 +154,8 @@ const projectsData = {
             title: 'Les DarMi Menu',
             category: 'Graphic Designs',
             description: 'Menu design for Les DarMi.',
-            imageUrl: '/images/graphic design/lesdarmimenu.png',
-            thumbnail: '/images/graphic design/lesdarmimenu.png',
+            imageUrl: './images/graphic design/lesdarmimenu.png',
+            thumbnail: './images/graphic design/lesdarmimenu.png',
             technologies: ['Photoshop', 'Illustrator']
         },
         {
@@ -163,8 +163,8 @@ const projectsData = {
             title: 'ebook',
             category: 'Graphic Designs',
             description: 'simple ebook design',
-            imageUrl: '/images/graphic design/ebook.png',
-            thumbnail: '/images/graphic design/ebook.png',
+            imageUrl: './images/graphic design/ebook.png',
+            thumbnail: './images/graphic design/ebook.png',
             technologies: ['Photoshop', 'Illustrator']
         },
         {
@@ -172,8 +172,8 @@ const projectsData = {
             title: 'Document Design',
             category: 'Graphic Designs',
             description: 'Research and Report Document Design',
-            imageUrl: '/images/graphic design/documentdesign.png',
-            thumbnail: '/images/graphic design/documentdesign.png',
+            imageUrl: './images/graphic design/documentdesign.png',
+            thumbnail: './images/graphic design/documentdesign.png',
             technologies: ['Photoshop', 'Illustrator']
         },
         {
@@ -181,8 +181,8 @@ const projectsData = {
             title: 'Fitness App UI',
             category: 'UI/UX Designs',
             description: 'Fitness App UI design.',
-            imageUrl: '/images/ui design/fitnessUI.png',
-            thumbnail: '/images/ui design/fitnessUI.png',
+            imageUrl: './images/ui design/fitnessUI.png',
+            thumbnail: './images/ui design/fitnessUI.png',
             technologies: ['Figma']
         },
         {
@@ -190,8 +190,8 @@ const projectsData = {
             title: 'Mazimpaka LLC',
             category: 'UI/UX Designs',
             description: 'Modern furniture portfolio website.',
-            imageUrl: '/images/ui design/mazi llc.png',
-            thumbnail: '/images/ui design/mazi llc.png',
+            imageUrl: './images/ui design/mazi llc.png',
+            thumbnail: './images/ui design/mazi llc.png',
             technologies: ['Figma']
         },
         {
@@ -199,8 +199,8 @@ const projectsData = {
             title: 'Auro mobile app design',
             category: 'UI/UX Designs',
             description: 'Mobile application wireframe and design',
-            imageUrl: '/images/ui design/auro.png',
-            thumbnail: '/images/ui design/auro.png',
+            imageUrl: './images/ui design/auro.png',
+            thumbnail: './images/ui design/auro.png',
             technologies: ['Figma']
         },
         {
@@ -208,8 +208,8 @@ const projectsData = {
             title: 'Vibrant venture design',
             category: 'UI/UX Designs',
             description: 'Website design',
-            imageUrl: '/images/ui design/venture website.png',
-            thumbnail: '/images/ui design/venture website.png',
+            imageUrl: './images/ui design/venture website.png',
+            thumbnail: './images/ui design/venture website.png',
             technologies: ['Figma']
         }
 
@@ -473,25 +473,25 @@ const servicesData = {
             id: 1,
             title: 'Web Development',
             description: 'Building responsive, scalable web applications with modern technologies',
-            image: '/images/services/web development.jpg'
+            image: './images/services/web development.jpg'
         },
         {
             id: 2,
             title: 'Mobile Apps',
             description: 'Creating intuitive mobile experiences for iOS and Android platforms',
-            image: '/images/services/mobile development.jpg'
+            image: './images/services/mobile development.jpg'
         },
         {
             id: 3,
             title: 'UI/UX Design',
             description: 'Designing user-centered interfaces that are beautiful and functional',
-            image: '/images/services/UI design.jpg'
+            image: './images/services/UI design.jpg'
         },
         {
             id: 4,
             title: 'Graphic Design',
             description: 'Crafting visual identities and stunning graphics for brands',
-            image: '/images/services/graphic design.jpg'
+            image: './images/services/graphic design.jpg'
         }
     ]
 };

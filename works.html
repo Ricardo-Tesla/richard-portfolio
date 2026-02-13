@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Works Carousel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* SECTION */
+        .works-section {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* TITLE */
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            margin-bottom: 80px;
+        }
+
+        .section-title .line {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+        }
+
+        .section-title h2 {
+            color: #ffffff;
+            font-size: 42px;
+            letter-spacing: 6px;
+            font-weight: 700;
+            margin: 0;
+            white-space: nowrap;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* SLIDER */
+        .slider-container {
+            position: relative;
+            height: 480px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1500px;
+        }
+
+        .slider-track {
+            position: relative;
+            width: 360px;
+            height: 400px;
+            transform-style: preserve-3d;
+            animation: rotate 35s linear infinite;
+        }
+
+        .slider-track.paused {
+            animation-play-state: paused;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        /* PROJECT CARD */
+        .project-card {
+            position: absolute;
+            width: 360px;
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            backface-visibility: hidden;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        /* CARD POSITIONS */
+        .project-card:nth-child(1) {
+            transform: rotateY(0deg) translateZ(480px);
+        }
+
+        .project-card:nth-child(2) {
+            transform: rotateY(60deg) translateZ(480px);
+        }
+
+        .project-card:nth-child(3) {
+            transform: rotateY(120deg) translateZ(480px);
+        }
+
+        .project-card:nth-child(4) {
+            transform: rotateY(180deg) translateZ(480px);
+        }
+
+        .project-card:nth-child(5) {
+            transform: rotateY(240deg) translateZ(480px);
+        }
+
+        .project-card:nth-child(6) {
+            transform: rotateY(300deg) translateZ(480px);
+        }
+
+        /* HOVER */
+        .project-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+        }
+
+        /* IMAGE */
+        .project-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.08);
+        }
+
+        /* CONTENT */
+        .project-card-content {
+            padding: 24px 26px 28px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+
+        .project-card-content h3 {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .project-card-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            line-height: 1.7;
+            font-weight: 400;
+        }
+
+        /* CARD TAG */
+        .card-tag {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            z-index: 10;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .works-section {
+                padding: 40px 20px;
+            }
+
+            .section-title {
+                margin-bottom: 40px;
+                gap: 20px;
+            }
+
+            .section-title h2 {
+                font-size: 28px;
+                letter-spacing: 4px;
+            }
+
+            .slider-container {
+                height: 450px;
+                overflow: visible;
+            }
+
+            .slider-track {
+                animation: none !important;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                transition: transform 0.3s ease-out;
+            }
+
+            .project-card {
+                width: 320px;
+                min-width: 320px;
+                position: relative;
+                transform: none !important;
+                margin: 0 10px;
+                flex-shrink: 0;
+            }
+
+            .project-card:first-child {
+                margin-left: calc(50% - 160px);
+            }
+
+            .project-card:last-child {
+                margin-right: calc(50% - 160px);
+            }
+
+            /* Swipe indicator */
+            .slider-container::after {
+                content: '← Swipe →';
+                position: absolute;
+                bottom: -30px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 12px;
+                letter-spacing: 2px;
+                font-weight: 500;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .project-card {
+                width: 280px;
+                min-width: 280px;
+            }
+
+            .project-card:first-child {
+                margin-left: calc(50% - 140px);
+            }
+
+            .project-card:last-child {
+                margin-right: calc(50% - 140px);
+            }
+        }
+    </style>
+
+    <div class="works-section">
+        <div class="section-title">
+            <div class="line"></div>
+            <h2>Our Works</h2>
+            <div class="line"></div>
+        </div>
+
+        <div class="slider-container" id="sliderContainer">
+            <div class="slider-track" id="sliderTrack">
+                <div class="project-card">
+                    <span class="card-tag">Featured</span>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&q=80" alt="Analytics Dashboard">
+                    <div class="project-card-content">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Comprehensive data visualization platform with real-time insights and advanced reporting capabilities.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="card-tag">Web App</span>
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=500&q=80" alt="E-Commerce Platform">
+                    <div class="project-card-content">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Modern online shopping experience with seamless checkout and inventory management system.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="card-tag">Mobile</span>
+                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=500&q=80" alt="Fitness Tracker">
+                    <div class="project-card-content">
+                        <h3>Fitness Tracker App</h3>
+                        <p>Intuitive mobile application for tracking workouts, nutrition, and achieving wellness goals.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="card-tag">Design</span>
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=500&q=80" alt="Brand Identity">
+                    <div class="project-card-content">
+                        <h3>Brand Identity System</h3>
+                        <p>Complete visual identity package including logo design, typography, and brand guidelines.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="card-tag">SaaS</span>
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500&q=80" alt="Project Manager">
+                    <div class="project-card-content">
+                        <h3>Project Management Tool</h3>
+                        <p>Cloud-based collaboration platform for teams to plan, track, and deliver projects efficiently.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="card-tag">AI/ML</span>
+                    <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=500&q=80" alt="AI Assistant">
+                    <div class="project-card-content">
+                        <h3>AI Virtual Assistant</h3>
+                        <p>Intelligent chatbot powered by machine learning to automate customer support and engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const sliderContainer = document.getElementById('sliderContainer');
+        const sliderTrack = document.getElementById('sliderTrack');
+        
+        // Check if device is mobile
+        const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+        // Desktop hover functionality
+        if (!isMobile) {
+            sliderContainer.addEventListener('mouseenter', () => {
+                sliderTrack.classList.add('paused');
+            });
+
+            sliderContainer.addEventListener('mouseleave', () => {
+                sliderTrack.classList.remove('paused');
+            });
+        }
+
+        // Mobile touch/swipe functionality
+        if (isMobile) {
+            let startX = 0;
+            let currentX = 0;
+            let isDragging = false;
+            let currentTranslate = 0;
+            let prevTranslate = 0;
+            let animationID = 0;
+
+            sliderTrack.addEventListener('touchstart', touchStart);
+            sliderTrack.addEventListener('touchmove', touchMove);
+            sliderTrack.addEventListener('touchend', touchEnd);
+
+            // Mouse events for desktop testing
+            sliderTrack.addEventListener('mousedown', touchStart);
+            sliderTrack.addEventListener('mousemove', touchMove);
+            sliderTrack.addEventListener('mouseup', touchEnd);
+            sliderTrack.addEventListener('mouseleave', touchEnd);
+
+            function touchStart(event) {
+                if (!isMobile && event.type === 'mousedown') return;
+                
+                isDragging = true;
+                startX = getPositionX(event);
+                animationID = requestAnimationFrame(animation);
+                sliderTrack.style.cursor = 'grabbing';
+            }
+
+            function touchMove(event) {
+                if (!isDragging) return;
+                
+                currentX = getPositionX(event);
+                currentTranslate = prevTranslate + currentX - startX;
+            }
+
+            function touchEnd() {
+                isDragging = false;
+                cancelAnimationFrame(animationID);
+                
+                prevTranslate = currentTranslate;
+                sliderTrack.style.cursor = 'grab';
+
+                // Snap to nearest card
+                const cardWidth = sliderTrack.children[0].offsetWidth + 20; // card width + margin
+                const movedBy = currentTranslate;
+                const snapIndex = Math.round(movedBy / cardWidth);
+                
+                currentTranslate = snapIndex * cardWidth;
+                prevTranslate = currentTranslate;
+
+                // Limit scrolling
+                const maxTranslate = 0;
+                const minTranslate = -(cardWidth * (sliderTrack.children.length - 1));
+                
+                if (currentTranslate > maxTranslate) currentTranslate = maxTranslate;
+                if (currentTranslate < minTranslate) currentTranslate = minTranslate;
+                
+                prevTranslate = currentTranslate;
+                setSliderPosition();
+            }
+
+            function getPositionX(event) {
+                return event.type.includes('mouse') ? event.pageX : event.touches[0].clientX;
+            }
+
+            function animation() {
+                setSliderPosition();
+                if (isDragging) requestAnimationFrame(animation);
+            }
+
+            function setSliderPosition() {
+                sliderTrack.style.transform = `translateX(${currentTranslate}px)`;
+            }
+
+            // Initial cursor style
+            sliderTrack.style.cursor = 'grab';
+        }
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            location.reload();
+        });
+    </script>
+</body>
+
+</html>
